@@ -48,3 +48,65 @@ var opposite = function (number) {
 // let result = opposite(-7);
 // console.log(result);
 
+// 6. Return the sum of all integers in an array.
+
+var simpleArraySum = function (ar) {
+    let sum = 0;
+    for (let i = 0; i < ar.length; i++) {
+        sum = sum + ar[i];
+    }
+    return sum;
+};
+
+// let answer = simpleArraySum([1, 2, 3, 4])
+// console.log(answer);
+
+// 7. Return true if it is not a weekday or you are on vacation.
+
+var sleepIn = function (weekday, vacation) {
+    if (!weekday || vacation) {
+        return true;
+    }
+    return false;
+};
+
+// console.log(sleepIn(true, false));
+
+// 8. Two monkeys are in trouble if both are smiling or neither is smiling. Return true in that case.
+
+var monkeyTrouble = function (aSmile, bSmile) {
+    if (aSmile == true && bSmile == true) {
+        return true;
+    } else if (aSmile == false && bSmile == false) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+// console.log(monkeyTrouble(true,true));
+
+// 9. Return the sum of two integers, but return double the sum when they are equal.
+
+
+var sumDouble = function (a, b) {
+    if (a == b) {
+        return 2 * (a + b);
+    } else {
+        return a + b;
+    }
+};
+
+// console.log(sumDouble(3, 3));
+
+// 10. Return the absolute difference between n and 21, doubling it when n is greater than 21.
+
+var diff21 = function (n) {
+    if (n > 21) {
+        return ((n - 21) * 2);
+    } else {
+        return (n - 21);
+    }
+};
+
+// console.log(diff21(25));
