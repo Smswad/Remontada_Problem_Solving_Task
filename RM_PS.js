@@ -1,6 +1,6 @@
 // 1. Write a function that returns the sum of two integers.
 var solveMeFirst = function (a, b) {
-    return a+b;    
+    return a + b;
 };
 
 // let result = solveMeFirst(2,3);
@@ -110,3 +110,71 @@ var diff21 = function (n) {
 };
 
 // console.log(diff21(25));
+
+// 11. Return true when a talking parrot is causing trouble outside the allowed hours of 7 through 20.
+
+var parrotTrouble = function (talking, hour) {
+    if (talking && (hour < 7 || hour > 20)) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+// console.log(parrotTrouble(true, 6));
+
+// 12. Return true if either number is 10 or their sum is 10.
+
+var makes10 = function (a, b) {
+    if (a == 10 || b == 10) {
+        return true;
+    } else if (a + b == 10) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+// console.log(makes10(4, 6));
+
+// 13. Return true if n is within 10 of 100 or within 10 of 200.
+
+var nearHundred = function (n) {
+    if ((n >= 90 && n <= 110) || (n >= 190 && n <= 210)) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+// console.log(nearHundred(110));
+
+// 14. Return true when one number is positive and the other is negative. If negative is true, both must be negative.
+
+var posNeg = function (a, b, negative) {
+    if (((a > 0 && b < 0) || (a < 0 && b > 0)) && negative == false) {
+        return true;
+    }
+    else if (negative == true && (a < 0 && b < 0)) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+// console.log(posNeg(-1, 1, false));
+
+// 15. Add "not " to the beginning of a string unless it already starts with "not".
+
+var notString = function (str) {
+
+    let StringCompare = str.toLowerCase();
+
+    if (StringCompare.trim().slice(0, 3).includes("not")) {
+        return false;
+    } else {
+        return `not ${str}`;
+    }
+};
+
+// console.log(notString("bad"));
