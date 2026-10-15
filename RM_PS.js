@@ -171,10 +171,92 @@ var notString = function (str) {
     let StringCompare = str.toLowerCase();
 
     if (StringCompare.trim().slice(0, 3).includes("not")) {
-        return false;
+        return str;
     } else {
         return `not ${str}`;
     }
 };
 
 // console.log(notString("bad"));
+
+// 16. Compare two three-element score arrays and return how many points each person earns.
+
+var compareTriplets = function (a, b) {
+    let aScore = 0;
+    let bScore = 0;
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] > b[i]) {
+            aScore++;
+        } else if (a[i] < b[i]) {
+            bScore++;
+        }
+    }
+    return [aScore, bScore];
+};
+
+// console.log(compareTriplets([5, 6, 7], [3, 6, 10]));
+
+// 17. Return the sum of all values in an integer array.
+
+var aVeryBigSum = function (ar) {
+    let sum = 0;
+    for (let i = 0; i < ar.length; i++) {
+        sum += ar[i];
+    }
+    return sum;
+};
+
+// console.log(aVeryBigSum([1000000001, 1000000002, 1000000003]));
+
+// 18. Create a right-aligned staircase of height n using # characters.
+
+var staircase = function (n) {
+    let stairs = "";
+    for (let i = 1; i <= n; i++) {
+        stairs += (" ".repeat(n - i) + "#".repeat(i) + "\n");
+    }
+    return stairs;
+};
+
+// console.log(staircase(4));
+
+// 19. Round a grade up to the next multiple of 5 when it is close enough; keep grades below 38 unchanged.
+
+var gradingStudents = function (grades) {
+    let roundgrades = [];
+    for (let i = 0; i < grades.length; i++) {
+        let grade = grades[i];
+        if (grade >= 38 && grade % 5 >= 3) {
+            roundgrades.push(grade + (5 - grade % 5))
+        } else {
+            roundgrades.push(grade)
+        }
+    }
+    return roundgrades;
+};
+
+// console.log(gradingStudents([73, 67, 38, 33]));
+
+// 20. Convert a 12-hour AM/PM time string into 24-hour format.
+
+var timeConversion = function (s) {
+    let modifier = s.slice(-2).toUpperCase();
+    let hours = parseInt(s.slice(0, 2), 10);
+    let restOfTime = s.slice(2, 8);
+    if (modifier === "AM") {
+        if (hours === 12) {
+            hours = 0;
+        }
+    }
+    else if (modifier === "PM") {
+        if (hours !== 12) {
+            hours += 12;
+        }
+    } else {
+        return "Invalid Time Input."
+    }
+
+    let formattedhour = String(hours).padStart(2, '0');
+    return formattedhour + restOfTime;
+}
+// console.log(timeConversion("07:05:45PM"));
