@@ -260,3 +260,59 @@ var timeConversion = function (s) {
     return formattedhour + restOfTime;
 }
 // console.log(timeConversion("07:05:45PM"));
+
+// 21. Return a string repeated exactly n times.
+
+var repeatStr = function (n, s) {
+    return s.repeat(n)
+};
+
+// console.log(repeatStr(3, "ha"));
+
+// 22. Return the given string with its characters in reverse order.
+
+var solution = function (str) {
+    return str.split("").reverse().join("");
+};
+
+// console.log(solution("world"));
+
+// 23. Return the sum of all positive numbers in an array. Return 0 if there are none.
+
+var positiveSum = function (arr) {
+    let CheckSum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) {
+            return 0;
+        } else {
+            CheckSum += arr[i];
+        }
+    }
+    return CheckSum;
+};
+
+// console.log(positiveSum([1, -4, 7, 12]));
+
+// 24. Return the sum of all integers from 1 through n.
+
+var summation = function (num) {
+    let sum = 0;
+    for (let i = 0; i <= num; i++) {
+        sum += (num - i);
+    }
+    return sum;
+};
+
+// console.log(summation(8));
+
+// 25. Convert a boolean value into the string "true" or "false".
+
+var booleanToString = function (b) {
+    if (b == true) {
+        return "true";
+    } else {
+        return "false";
+    }
+};
+
+// console.log(booleanToString(true));
